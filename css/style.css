@@ -1,0 +1,121 @@
+@import url('./font.css');
+
+body{
+	font-family: 'robotobold';
+	color: white;
+}
+
+li, ul, p{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+}
+
+button {
+	border: none;
+	background: transparent;
+	cursor: pointer;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0; 
+}
+
+* {
+	box-sizing: border-box;
+} 
+
+input, textarea {
+	outline:none;
+}
+
+.wrapper{
+	height: 100vh;
+	width: 100%;
+	background: url(../img/Background.jpg) center/cover;
+	overflow: hidden;
+	position: relative;
+}
+
+.difficulty{
+	margin-top: 130px;
+	margin-left: 100px;
+}
+
+.difficulty__title{
+	font-size: 57px;
+}
+
+.difficulty__subtitle{
+	font-size: 19px;
+	margin-bottom: 60px;
+}
+
+.difficulty__list{
+	font-size: 50px;
+	margin-bottom: 112px;
+	width: 20%;
+}
+
+.difficulty__item{
+	cursor: pointer;
+	margin-bottom: 26px;
+	position: relative;
+}
+
+.difficulty__item:last-child{
+	margin-bottom: 0;
+}
+
+.difficulty__item:hover.difficulty__item::before{
+	content: "";
+	width: 18px;
+	height: 18px;
+	transform: rotate(45deg);
+	background: #D62B2E;
+	position: absolute;
+	top: 30%;
+	left: -15%;
+}
+
+.difficulty__btn{
+	font-size: 32px;
+	color: white;
+	background: #D62B2E;
+	border-radius: 7px;
+	padding: 29px 85px;
+	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.card{
+	position: absolute;
+	top: 50%;
+	right: 50%;
+}
+
+.card__wrapper{
+	position: relative;
+}
+
+.card__down{
+	background: url('../img/card.png');
+	width: 218px;
+	height: 341px;
+	box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+	transform: rotate(11.9deg);
+	position: absolute;
+}
+
+.card__up{
+	background: url('../img/card.png');
+	width: 218px;
+	height: 341px;
+	box-shadow: -2px 0px 1px rgba(0, 0, 0, 0.3), 0px 4px 4px rgba(0, 0, 0, 0.25);
+	transform: rotate(39.26deg);
+	position: absolute;
+	left: 180px;
+}
