@@ -9,7 +9,7 @@ const itemActive = 'difficulty__item_active';
 const startBtn = document.querySelector('#startbtn');
 const playCard = document.querySelector('.play__card');
 const copyCard = () => playCard.outerHTML;
-
+const playCards = document.querySelectorAll('play__card');
 
 
 diffList.addEventListener('click', (e) => {
@@ -29,6 +29,8 @@ diffList.addEventListener('click', (e) => {
   }
 })
 
+
+
 startBtn.addEventListener('click', () => {
   if(easy.classList.contains(itemActive)){
     difficulty.classList.add(diffNone);
@@ -37,4 +39,8 @@ startBtn.addEventListener('click', () => {
       cardGameWrapper.insertAdjacentHTML('beforeend', copyCard());
     }
   }
+})
+
+cardGameWrapper.addEventListener('click' , (e) => {
+
 })
