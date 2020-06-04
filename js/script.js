@@ -9,38 +9,57 @@ const itemActive = 'difficulty__item_active';
 const startBtn = document.querySelector('#startbtn');
 const playCard = document.querySelector('.play__card');
 const copyCard = () => playCard.outerHTML;
-const playCards = document.querySelectorAll('play__card');
-
+const cardsFront = 'play__card-front';
+const cardsBack = 'play__card-back';
+const allCard = document.querySelectorAll('.play__card');
+let level;
+const random = (num) => Math.floor(Math.random() * num);
 
 diffList.addEventListener('click', (e) => {
-  e = e.target;
-  if(e == easy) {
+  if(e.target == easy) {
     easy.classList.add(itemActive);
     normal.classList.remove(itemActive);
     hard.classList.remove(itemActive);
-  }else if(e == normal){
+    level = [easy, 3];
+  }else if(e.target == normal){
     normal.classList.add(itemActive);
     easy.classList.remove(itemActive);
     hard.classList.remove(itemActive);
-  }else if(e == hard){
+    level = [normal, 6];
+  }else if(e.target == hard){
     hard.classList.add(itemActive);
     easy.classList.remove(itemActive);
     normal.classList.remove(itemActive);
+    level = [hard, 9];
   }
 })
-
 
 
 startBtn.addEventListener('click', () => {
-  if(easy.classList.contains(itemActive)){
+  if(level[0].classList.contains(itemActive)){
     difficulty.classList.add(diffNone);
     playCard.classList.remove('play__card_none');
-    for(i = 0; i < 2 ; i++){
+    for(let i = 0; i < level[1] - 1 ; i++){
       cardGameWrapper.insertAdjacentHTML('beforeend', copyCard());
     }
+    let allCradsBack = document.querySelectorAll('.play__card-back');
+    let bug = random(level[1]);
+    console.log(`Bug card is : ${bug + 1}`);
+    let bugCard = allCradsBack[bug];
+    bugCard.classList.add('bugcard');
+    }
+})
+
+
+cardGameWrapper.addEventListener('click' , (e) => {
+  e = e.target;
+  if(e.classList.contains(cardsFront)){
+    curentCard = e.parentElement;  
+    curentCard.parentElement.classList.add('play__card_active');
+    cardGameWrapper.addEventListener('click' , () => {
+      location.reload() 
+    })
   }
 })
 
-cardGameWrapper.addEventListener('click' , (e) => {
 
-})

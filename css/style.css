@@ -146,11 +146,11 @@ input, textarea {
 }
 
 .play__card {
-  background-color: transparent;
 	width: 218px;
 	height: 341px;
 	perspective: 1000px;
 	cursor: pointer;
+	transition: all 1s;
 }
 
 .play__card-inner {
@@ -162,38 +162,43 @@ input, textarea {
   transform-style: preserve-3d;
 }
 
-.play__card:hover .play__card-inner {
+.play__card:hover  {
 	transform: rotate(-3.08deg);
 	box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5);
 	margin-top: -25px;
 }
 
-.play__card_active .play_card-inner{
-  transform: rotateY(180deg);
-}
-
-/* Position the front and back side */
 .play__card-front, .play__card-back {
   position: absolute;
   width: 100%;
   height: 100%;
-  -webkit-backface-visibility: hidden; /* Safari */
   backface-visibility: hidden;
 }
 
-/* Style the front side (fallback if image is missing) */
 .play__card-front {
 	background: url('../img/card.png');
-  color: black;
 }
 
-/* Style the back side */
 .play__card-back {
-  background-color: dodgerblue;
-  color: white;
+	background: url('../img/game_over.png');
   transform: rotateY(180deg);
 }
 
 .play__card_none{
 	display: none;
 }
+
+.play__card_active .play__card-inner{
+	transform: rotateY(180deg);
+	box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5);
+}
+.play__card_active.play__card:hover{
+	transform: rotate(0deg);
+	margin-top: 0px;
+	box-shadow: none;
+}
+
+.bugcard{
+	background: url('../img/bug.png');
+}
+
