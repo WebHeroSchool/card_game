@@ -30,7 +30,7 @@ diffList.addEventListener('click', (e) => {
     hard.classList.add(itemActive);
     easy.classList.remove(itemActive);
     normal.classList.remove(itemActive);
-    level = [hard, 9];
+    level = [hard, 10];
   }
 })
 
@@ -38,7 +38,7 @@ diffList.addEventListener('click', (e) => {
 startBtn.addEventListener('click', () => {
   if(level[0].classList.contains(itemActive)){
     difficulty.classList.add(diffNone);
-    playCard.classList.remove('play__card_none');
+    cardGameWrapper.classList.remove('play__card_none');
     for(let i = 0; i < level[1] - 1 ; i++){
       cardGameWrapper.insertAdjacentHTML('beforeend', copyCard());
     }
@@ -47,6 +47,9 @@ startBtn.addEventListener('click', () => {
     console.log(`Bug card is : ${bug + 1}`);
     let bugCard = allCradsBack[bug];
     bugCard.classList.add('bugcard');
+    if(level[0] == hard){
+      cardGameWrapper.style.width = '80%';
+    }
     }
 })
 

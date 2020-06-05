@@ -10,25 +10,27 @@
 <body>
 	<div class="wrapper">
 		<div class="difficulty">
-			<div class="difficulty__headig">
-				<h1 class="difficulty__title">Выберите уровень сложности:</h1>
-				<h3 class="difficulty__subtitle">Выберите сложность и игра начнется. Чем выше уровень - тем больше будет выборка карт. </h3>
+			<div class="diffculty__menu">
+				<div class="difficulty__headig">
+					<h1 class="difficulty__title">Выберите уровень сложности:</h1>
+					<h3 class="difficulty__subtitle">Выберите сложность и игра начнется. Чем выше уровень - тем больше будет выборка карт. </h3>
+				</div>
+				<ul class="difficulty__list">
+					<li id="easy" class="difficulty__item">Простой</li>
+					<li id="normal" class="difficulty__item">Средний</li>
+					<li id="hard" class="difficulty__item">Сложный</li>
+				</ul>    
+				<button id="startbtn" class="difficulty__btn">Начать игру</button>
 			</div>
-			<ul class="difficulty__list">
-				<li id="easy" class="difficulty__item">Простой</li>
-				<li id="normal" class="difficulty__item">Средний</li>
-				<li id="hard" class="difficulty__item">Сложный</li>
-			</ul>    
-			<button id="startbtn" class="difficulty__btn">Начать игру</button>
-			<div class="card">
+			<div class="difficulty__card">
 				<div class="card__wrapper">
 					<div class="card__down"></div>
 					<div class="card__up"></div>
 				</div>
 			</div>
 		</div>
-		<div class="cardgame__wrapper">
-			<div class="play__card play__card_none">
+		<div class="cardgame__wrapper play__card_none">
+			<div class="play__card">
 				<div class="play__card-inner">
 					<div class="play__card-front">
 					</div>
