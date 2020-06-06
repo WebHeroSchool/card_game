@@ -1,0 +1,7 @@
+@font-face {
+	font-family: 'robotobold';
+	src: url('../font/Roboto-Bold.woff2') format('woff2'),
+			 url('../font/Roboto-Bold.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
